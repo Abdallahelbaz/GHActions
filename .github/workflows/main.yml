@@ -1,0 +1,31 @@
+name: First Workflow
+
+# this is trigger, when to use this workflow
+on:
+# it's used after pushing
+  push:
+  # pushing to main branch
+    branches:
+      - main
+
+jobs:
+# use the os from github
+  example-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: print a welcome message
+        run: echo "welcome to this workflow"
+
+
+
+
+
+
+
+
+
+
+
+
+    
