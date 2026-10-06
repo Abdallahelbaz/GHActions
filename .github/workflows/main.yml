@@ -17,6 +17,14 @@ jobs:
       - name: print a welcome message
         run: echo "welcome to this workflow"
 
+      # this action to checkout the code inside my working place
+      - name: Checkout repo
+        uses: actions/checkout@v6.1.0
+
+      - name: List repo Files
+        run: ls -la
+        
+
 
 
 
