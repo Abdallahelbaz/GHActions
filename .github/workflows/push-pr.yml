@@ -1,0 +1,24 @@
+on:
+    push:
+        branches:
+            - main
+            # any branch starts with word release
+            - "release/**"
+        # only in those paths not in all
+        paths:
+            # any file in src will be triggered
+            - "src/**"
+    pull_request:
+        branches:
+            - main
+            # any branch starts with word release
+            - "release/**"
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v6.1.0
+
+            - name: test
+              run: npm test
