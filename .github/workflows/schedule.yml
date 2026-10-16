@@ -1,0 +1,11 @@
+on:
+    schedule:
+        # i can add more than a time
+        - cron: "0 0 * * *"
+
+jobs:
+    daily_task:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Print Message
+              run: echo "Running schedule task"
