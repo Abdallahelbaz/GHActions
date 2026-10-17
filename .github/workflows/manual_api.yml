@@ -1,0 +1,12 @@
+on: 
+  # this is only with api call
+  repository_dispatch: 
+  # [] another way for list in yaml
+    types: [incident_repor]
+
+jobs:
+  handle-incident:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Incident Details
+        run: echo "Incident reported"
