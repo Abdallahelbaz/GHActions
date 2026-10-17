@@ -1,6 +1,18 @@
 on: 
 # this is for manual workflows from gui
+# without giving it anything, it will run so
+# workflow_dispatch:
+# if i want to give it inputs, i use inputs:
   workflow_dispatch:
+    inputs:
+      environment:
+        description: "Choose Environment"
+        required: true
+        default: "Staging"
+        type: choice
+        options:
+          - staging
+          - production
 
 jobs:
   deploy:
