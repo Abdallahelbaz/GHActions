@@ -1,0 +1,10 @@
+on: 
+# this is for manual workflows from gui
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy App
+        run: echo "Deploying App"
