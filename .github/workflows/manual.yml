@@ -19,4 +19,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy App
-        run: echo "Deploying App"
+      # to make run takes more than a value
+        run: |
+          echo "Deploying App"
+          echo " user used: ${{ inputs.environment }} "
+        # to use user's input
+
+        
