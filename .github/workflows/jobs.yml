@@ -5,7 +5,13 @@ jobs:
   job_1:
     runs-on: ubuntu-latest
     steps:
-      - run: "echo Job ${{ github.job }}"
+      - run: |
+          "echo Job ${{ github.job }}"
+          install pandas
+      # to specify a dir for the project to work in
+        working-directory: ./src
+      # to specify shell to work on
+        shell: bash
 
   job_2:
     runs-on: ubuntu-latest
