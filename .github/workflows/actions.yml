@@ -1,1 +1,15 @@
+on:
+  workflow_dispatch:
 
+jobs:
+  actions-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+      # this is used with actions from marketplace
+        uses: actions/checkout@v6.1.0
+        # to give it parameters
+        with:
+              name: Ahmed
+        env:
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
