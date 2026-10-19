@@ -1,0 +1,11 @@
+on:
+  workflow_dispatch:
+jobs:
+  comm_v2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: set API key
+        # other steps can't use this variable without makeing:
+        run: echo "API_KEY=234243" >> $GITHUB_ENV
+      - name: Use the variable
+        run: echo "Using API KEY:= $API_KEY"
