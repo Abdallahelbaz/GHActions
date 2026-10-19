@@ -9,3 +9,12 @@ jobs:
         run: echo "API_KEY=234243" >> $GITHUB_ENV
       - name: Use the variable
         run: echo "Using API KEY:= $API_KEY"
+
+      # to make an error message without ending the workflow
+      - name: check if file exists
+        run: |
+          if [ -f "config.yaml" ]; then
+            echo "::debug::config.yaml consists"
+          else
+            echo "::error:: config.yaml doesn't exist"
+          fi
