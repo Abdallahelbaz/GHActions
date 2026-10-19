@@ -1,1 +1,20 @@
+on:
+  workflow_dispatch:
 
+jobs:
+  job_1:
+    strategy:
+      # that means if it failed, continue and don't stop
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node_version: [14.x,15.x,16.x]
+    # it will take every os from the list and run it
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: ${{matrix.node_version}}
+          
+      
