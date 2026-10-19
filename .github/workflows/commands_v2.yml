@@ -9,7 +9,11 @@ jobs:
         run: echo "API_KEY=234243" >> $GITHUB_ENV
       - name: Use the variable
         run: echo "Using API KEY:= $API_KEY"
-
+        # i don't want github to show the api key
+      - name: masked var
+        run: |
+          echo "::add-mask::$API_KEY"
+          echo "Using API KEY:= $API_KEY"
       # to make an error message without ending the workflow
       - name: check if file exists
         run: |
