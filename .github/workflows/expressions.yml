@@ -1,0 +1,13 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  expressions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print message
+        run: echo "The job is running"
+        # built in functions:
+        if: failure()
+
+        
